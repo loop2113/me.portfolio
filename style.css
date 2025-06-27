@@ -80,6 +80,28 @@ body {
     width: 100%;
 }
 
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(33, 150, 243, 0.1);
+    color: #2196F3;
+}
+
 .menu-toggle {
     display: none;
     background: none;
@@ -407,6 +429,144 @@ section {
     font-weight: 500;
 }
 
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 2rem;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #e0e0e0;
+    transform: rotate(90deg);
+}
+
+.modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.modal-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.modal-section {
+    margin-bottom: 2rem;
+}
+
+.modal-section h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #666;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2196F3;
+    font-weight: bold;
+}
+
+.modal-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-issuer, .modal-date, .modal-valid {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: #e8f4fd;
+    color: #1976D2;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
 /* Certificates Section */
 .certificates {
     background: #f8f9fa;
@@ -430,10 +590,38 @@ section {
     transform: translateY(-5px);
 }
 
+.certificate-image {
+    position: relative;
+    overflow: hidden;
+}
+
 .certificate-image img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-card:hover .certificate-overlay {
+    opacity: 1;
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.1);
 }
 
 .certificate-content {
@@ -579,6 +767,31 @@ section {
         visibility: visible;
     }
 
+    .modal-overlay {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-links {
+        flex-direction: column;
+    }
+
+    .modal-links .btn {
+        text-align: center;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -638,6 +851,148 @@ section {
     .certificates-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .header {
+    background: rgba(18, 18, 18, 0.95);
+}
+
+.dark-mode .logo h2,
+.dark-mode .nav a {
+    color: #e0e0e0;
+}
+
+.dark-mode .nav a:hover {
+    color: #64B5F6;
+}
+
+.dark-mode .theme-toggle {
+    color: #e0e0e0;
+}
+
+.dark-mode .theme-toggle:hover {
+    background: rgba(100, 181, 246, 0.1);
+    color: #64B5F6;
+}
+
+.dark-mode .menu-toggle {
+    color: #e0e0e0;
+}
+
+.dark-mode .about {
+    background: #1a1a1a;
+}
+
+.dark-mode .certificates {
+    background: #1a1a1a;
+}
+
+.dark-mode .section-title {
+    color: #e0e0e0;
+}
+
+.dark-mode .about-text h3,
+.dark-mode .about-text p,
+.dark-mode .experience h4 {
+    color: #e0e0e0;
+}
+
+.dark-mode .experience-item {
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.dark-mode .company {
+    color: #b0b0b0;
+}
+
+.dark-mode .skills h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .project-card,
+.dark-mode .certificate-card {
+    background: #2a2a2a;
+}
+
+.dark-mode .project-content h3,
+.dark-mode .certificate-content h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .project-content p {
+    color: #b0b0b0;
+}
+
+.dark-mode .tech-tag {
+    background: #1e3a5f;
+    color: #64B5F6;
+}
+
+.dark-mode .skill-tag {
+    background: #1e3a5f;
+    color: #64B5F6;
+}
+
+.dark-mode .contact-info h3,
+.dark-mode .contact-info p {
+    color: #e0e0e0;
+}
+
+.dark-mode .contact-item {
+    color: #b0b0b0;
+}
+
+.dark-mode .contact-form {
+    background: #2a2a2a;
+}
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background: #3a3a3a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group textarea:focus {
+    border-color: #64B5F6;
+}
+
+.dark-mode .modal-content {
+    background: #2a2a2a;
+}
+
+.dark-mode .modal-body h2,
+.dark-mode .modal-section h3 {
+    color: #e0e0e0;
+}
+
+.dark-mode .modal-description,
+.dark-mode .modal-issuer,
+.dark-mode .modal-date,
+.dark-mode .modal-valid,
+.dark-mode .feature-list li {
+    color: #b0b0b0;
+}
+
+.dark-mode .modal-close {
+    background: #3a3a3a;
+    color: #e0e0e0;
+}
+
+.dark-mode .modal-close:hover {
+    background: #4a4a4a;
+}
+
+.dark-mode .nav {
+    background: #2a2a2a;
 }
 
 /* Animations */

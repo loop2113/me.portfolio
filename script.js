@@ -1,8 +1,35 @@
 
 const { useState, useEffect } = React;
 
+// Modal Component
+const Modal = ({ isOpen, onClose, children }) => {
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
+
+    if (!isOpen) return null;
+
+    return (
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="modal-close" onClick={onClose}>
+                    <i className="fas fa-times"></i>
+                </button>
+                {children}
+            </div>
+        </div>
+    );
+};
+
 // Header Component
-const Header = () => {
+const Header = ({ darkMode, toggleDarkMode }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -18,9 +45,14 @@ const Header = () => {
                     <a href="#certificates" onClick={() => setIsMenuOpen(false)}>Certificates</a>
                     <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
                 </nav>
-                <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                    <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
-                </button>
+                <div className="header-controls">
+                    <button className="theme-toggle" onClick={toggleDarkMode}>
+                        <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+                    </button>
+                    <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                        <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                    </button>
+                </div>
             </div>
         </header>
     );
@@ -118,33 +150,41 @@ const About = () => {
 
 // Projects Section
 const Projects = () => {
+    const [selectedProject, setSelectedProject] = useState(null);
+
     const projects = [
         {
             id: 1,
             title: "E-Commerce Platform",
             description: "A full-stack e-commerce solution built with React and Node.js",
+            fullDescription: "This comprehensive e-commerce platform features user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
             image: "https://via.placeholder.com/400x250/2196F3/white?text=E-Commerce",
             technologies: ["React", "Node.js", "MongoDB", "Stripe"],
             liveUrl: "https://your-ecommerce-site.com",
-            githubUrl: "https://github.com/yourusername/ecommerce"
+            githubUrl: "https://github.com/yourusername/ecommerce",
+            features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Responsive Design"]
         },
         {
             id: 2,
             title: "Task Management App",
             description: "A collaborative task management application with real-time updates",
+            fullDescription: "A powerful task management application that allows teams to collaborate in real-time. Features include task assignment, progress tracking, real-time notifications, file attachments, and detailed project analytics.",
             image: "https://via.placeholder.com/400x250/FF9800/white?text=Task+App",
             technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
             liveUrl: "https://your-task-app.com",
-            githubUrl: "https://github.com/yourusername/task-app"
+            githubUrl: "https://github.com/yourusername/task-app",
+            features: ["Real-time Updates", "Team Collaboration", "Progress Tracking", "File Attachments"]
         },
         {
             id: 3,
             title: "Weather Dashboard",
             description: "A responsive weather dashboard with location-based forecasts",
+            fullDescription: "An intuitive weather dashboard that provides current weather conditions, 7-day forecasts, and weather maps. Features location-based services, weather alerts, and beautiful data visualizations using Chart.js.",
             image: "https://via.placeholder.com/400x250/9C27B0/white?text=Weather+App",
             technologies: ["React", "API Integration", "Chart.js", "CSS3"],
             liveUrl: "https://your-weather-app.com",
-            githubUrl: "https://github.com/yourusername/weather-app"
+            githubUrl: "https://github.com/yourusername/weather-app",
+            features: ["Location Services", "Weather Alerts", "Data Visualization", "Mobile Responsive"]
         }
     ];
 
@@ -159,11 +199,14 @@ const Projects = () => {
                                 <img src={project.image} alt={project.title} />
                                 <div className="project-overlay">
                                     <div className="project-links">
+                                        <button 
+                                            className="btn btn-small" 
+                                            onClick={() => setSelectedProject(project)}
+                                        >
+                                            <i className="fas fa-eye"></i> View Details
+                                        </button>
                                         <a href={project.liveUrl} className="btn btn-small" target="_blank" rel="noopener noreferrer">
                                             <i className="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
-                                        <a href={project.githubUrl} className="btn btn-small" target="_blank" rel="noopener noreferrer">
-                                            <i className="fab fa-github"></i> Code
                                         </a>
                                     </div>
                                 </div>
@@ -176,17 +219,65 @@ const Projects = () => {
                                         <span key={index} className="tech-tag">{tech}</span>
                                     ))}
                                 </div>
+                                <button 
+                                    className="btn btn-primary btn-small" 
+                                    style={{marginTop: '1rem'}}
+                                    onClick={() => setSelectedProject(project)}
+                                >
+                                    View Details
+                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            <Modal isOpen={!!selectedProject} onClose={() => setSelectedProject(null)}>
+                {selectedProject && (
+                    <div className="project-modal">
+                        <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />
+                        <div className="modal-body">
+                            <h2>{selectedProject.title}</h2>
+                            <p className="modal-description">{selectedProject.fullDescription}</p>
+                            
+                            <div className="modal-section">
+                                <h3>Technologies Used</h3>
+                                <div className="project-technologies">
+                                    {selectedProject.technologies.map((tech, index) => (
+                                        <span key={index} className="tech-tag">{tech}</span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="modal-section">
+                                <h3>Key Features</h3>
+                                <ul className="feature-list">
+                                    {selectedProject.features.map((feature, index) => (
+                                        <li key={index}>{feature}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <div className="modal-links">
+                                <a href={selectedProject.liveUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i className="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href={selectedProject.githubUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                                    <i className="fab fa-github"></i> View Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </Modal>
         </section>
     );
 };
 
 // Certificates Section
 const Certificates = () => {
+    const [selectedCertificate, setSelectedCertificate] = useState(null);
+
     const certificates = [
         {
             id: 1,
@@ -194,7 +285,10 @@ const Certificates = () => {
             issuer: "Amazon Web Services",
             date: "2023",
             image: "https://via.placeholder.com/300x200/FF6B35/white?text=AWS+Cert",
-            credentialUrl: "https://aws.amazon.com/certification/"
+            credentialUrl: "https://aws.amazon.com/certification/",
+            description: "Demonstrates expertise in developing and maintaining applications on the AWS platform.",
+            skills: ["Lambda Functions", "DynamoDB", "S3", "API Gateway", "CloudFormation"],
+            validUntil: "2026"
         },
         {
             id: 2,
@@ -202,7 +296,10 @@ const Certificates = () => {
             issuer: "Meta",
             date: "2022",
             image: "https://via.placeholder.com/300x200/61DAFB/white?text=React+Cert",
-            credentialUrl: "https://developers.facebook.com/certifications/"
+            credentialUrl: "https://developers.facebook.com/certifications/",
+            description: "Validates proficiency in React development and modern JavaScript practices.",
+            skills: ["React Hooks", "State Management", "Component Architecture", "Testing"],
+            validUntil: "2025"
         },
         {
             id: 3,
@@ -210,7 +307,10 @@ const Certificates = () => {
             issuer: "freeCodeCamp",
             date: "2021",
             image: "https://via.placeholder.com/300x200/0A0A23/white?text=FCC+Cert",
-            credentialUrl: "https://freecodecamp.org/certification/"
+            credentialUrl: "https://freecodecamp.org/certification/",
+            description: "Comprehensive certification covering front-end and back-end web development.",
+            skills: ["HTML/CSS", "JavaScript", "Node.js", "Database Design", "API Development"],
+            validUntil: "Lifetime"
         }
     ];
 
@@ -223,19 +323,64 @@ const Certificates = () => {
                         <div key={cert.id} className="certificate-card">
                             <div className="certificate-image">
                                 <img src={cert.image} alt={cert.title} />
+                                <div className="certificate-overlay">
+                                    <button 
+                                        className="btn btn-small"
+                                        onClick={() => setSelectedCertificate(cert)}
+                                    >
+                                        <i className="fas fa-eye"></i> View Details
+                                    </button>
+                                </div>
                             </div>
                             <div className="certificate-content">
                                 <h3>{cert.title}</h3>
                                 <p className="issuer">{cert.issuer}</p>
                                 <p className="date">{cert.date}</p>
-                                <a href={cert.credentialUrl} className="btn btn-small" target="_blank" rel="noopener noreferrer">
-                                    View Credential
-                                </a>
+                                <button 
+                                    className="btn btn-small"
+                                    onClick={() => setSelectedCertificate(cert)}
+                                >
+                                    View Details
+                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            <Modal isOpen={!!selectedCertificate} onClose={() => setSelectedCertificate(null)}>
+                {selectedCertificate && (
+                    <div className="certificate-modal">
+                        <img src={selectedCertificate.image} alt={selectedCertificate.title} className="modal-image" />
+                        <div className="modal-body">
+                            <h2>{selectedCertificate.title}</h2>
+                            <p className="modal-issuer">Issued by: <strong>{selectedCertificate.issuer}</strong></p>
+                            <p className="modal-date">Date: <strong>{selectedCertificate.date}</strong></p>
+                            <p className="modal-valid">Valid Until: <strong>{selectedCertificate.validUntil}</strong></p>
+                            
+                            <div className="modal-section">
+                                <h3>Description</h3>
+                                <p>{selectedCertificate.description}</p>
+                            </div>
+
+                            <div className="modal-section">
+                                <h3>Skills Validated</h3>
+                                <div className="skills-tags">
+                                    {selectedCertificate.skills.map((skill, index) => (
+                                        <span key={index} className="skill-tag">{skill}</span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="modal-links">
+                                <a href={selectedCertificate.credentialUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    <i className="fas fa-external-link-alt"></i> Verify Credential
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </Modal>
         </section>
     );
 };
@@ -342,7 +487,16 @@ const Footer = () => {
 
 // Main App Component
 const App = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
     useEffect(() => {
+        // Load dark mode preference from localStorage
+        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+        setDarkMode(savedDarkMode);
+        if (savedDarkMode) {
+            document.body.classList.add('dark-mode');
+        }
+
         // Smooth scrolling for navigation links
         const links = document.querySelectorAll('a[href^="#"]');
         links.forEach(link => {
@@ -356,9 +510,21 @@ const App = () => {
         });
     }, []);
 
+    const toggleDarkMode = () => {
+        const newDarkMode = !darkMode;
+        setDarkMode(newDarkMode);
+        localStorage.setItem('darkMode', newDarkMode.toString());
+        
+        if (newDarkMode) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+    };
+
     return (
         <div className="App">
-            <Header />
+            <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             <Hero />
             <About />
             <Projects />
@@ -370,4 +536,5 @@ const App = () => {
 };
 
 // Render the App
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
