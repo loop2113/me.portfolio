@@ -46,9 +46,9 @@ const Header = ({ darkMode, toggleDarkMode }) => {
                     <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
                 </nav>
                 <div className="header-controls">
-                    <button className="theme-toggle" onClick={toggleDarkMode}>
+                    {/* <button className="theme-toggle" onClick={toggleDarkMode}>
                         <i className={`fas ${darkMode ? 'fa-sun' : 'fa-moon'}`}></i>
-                    </button>
+                    </button> */}
                     <button className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                     </button>
@@ -64,7 +64,7 @@ const Hero = () => {
         <section id="home" className="hero">
             <div className="hero-content">
                 <div className="profile-image">
-                    <img src="https://via.placeholder.com/300x300/4CAF50/white?text=Your+Photo" alt="Profile" />
+                    <img src="images/profile.jpg" alt="Profile" />
                 </div>
                 <div className="hero-text">
                     <h1>Hi, I'm <span className="highlight">Ireneo Atenta</span></h1>
@@ -161,9 +161,9 @@ const About = () => {
                                     <span>{skill.level}%</span>
                                 </div>
                                 <div className="skill-bar">
-                                    <div 
-                                        className="skill-progress" 
-                                        style={{width: `${skill.level}%`}}
+                                    <div
+                                        className="skill-progress"
+                                        style={{ width: `${skill.level}%` }}
                                     ></div>
                                 </div>
                             </div>
@@ -237,8 +237,8 @@ const Projects = () => {
                                 <img src={project.image} alt={project.title} />
                                 <div className="project-overlay">
                                     <div className="project-links">
-                                        <button 
-                                            className="btn btn-small" 
+                                        <button
+                                            className="btn btn-small"
                                             onClick={() => setSelectedProject(project)}
                                         >
                                             <i className="fas fa-eye"></i> View Details
@@ -257,9 +257,9 @@ const Projects = () => {
                                         <span key={index} className="tech-tag">{tech}</span>
                                     ))}
                                 </div>
-                                <button 
-                                    className="btn btn-primary btn-small" 
-                                    style={{marginTop: '1rem'}}
+                                <button
+                                    className="btn btn-primary btn-small"
+                                    style={{ marginTop: '1rem' }}
                                     onClick={() => setSelectedProject(project)}
                                 >
                                     View Details
@@ -277,7 +277,7 @@ const Projects = () => {
                         <div className="modal-body">
                             <h2>{selectedProject.title}</h2>
                             <p className="modal-description">{selectedProject.fullDescription}</p>
-                            
+
                             <div className="modal-section">
                                 <h3>Technologies Used</h3>
                                 <div className="project-technologies">
@@ -395,7 +395,7 @@ const Certificates = () => {
                             <div className="certificate-image">
                                 <img src={cert.image} alt={cert.title} />
                                 <div className="certificate-overlay">
-                                    <button 
+                                    <button
                                         className="btn btn-small"
                                         onClick={() => setSelectedCertificate(cert)}
                                     >
@@ -407,7 +407,7 @@ const Certificates = () => {
                                 <h3>{cert.title}</h3>
                                 <p className="issuer">{cert.issuer}</p>
                                 <p className="date">{cert.date}</p>
-                                <button 
+                                <button
                                     className="btn btn-small"
                                     onClick={() => setSelectedCertificate(cert)}
                                 >
@@ -428,7 +428,7 @@ const Certificates = () => {
                             <p className="modal-issuer">Issued by: <strong>{selectedCertificate.issuer}</strong></p>
                             <p className="modal-date">Date: <strong>{selectedCertificate.date}</strong></p>
                             <p className="modal-valid">Valid Until: <strong>{selectedCertificate.validUntil}</strong></p>
-                            
+
                             <div className="modal-section">
                                 <h3>Description</h3>
                                 <p>{selectedCertificate.description}</p>
@@ -582,7 +582,7 @@ const App = () => {
         const newDarkMode = !darkMode;
         setDarkMode(newDarkMode);
         localStorage.setItem('darkMode', newDarkMode.toString());
-        
+
         if (newDarkMode) {
             document.body.classList.add('dark-mode');
         } else {
