@@ -36,7 +36,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
         <header className="header">
             <div className="container">
                 <div className="logo">
-                    <h2>Your Name</h2>
+                    <h2>Ireneo Atenta</h2>
                 </div>
                 <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
                     <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
@@ -67,9 +67,9 @@ const Hero = () => {
                     <img src="https://via.placeholder.com/300x300/4CAF50/white?text=Your+Photo" alt="Profile" />
                 </div>
                 <div className="hero-text">
-                    <h1>Hi, I'm <span className="highlight">Your Name</span></h1>
-                    <h2>Full Stack Developer</h2>
-                    <p>Passionate about creating amazing web experiences and solving complex problems through code.</p>
+                    <h1>Hi, I'm <span className="highlight">Ireneo Atenta</span></h1>
+                    <h2>Technical Project Manager & Full Stack Developer</h2>
+                    <p>I blend my expertise in technical project management and full stack web development to drive impactful outcomes. With a keen eye for detail and a passion for problem-solving, I lead teams through the entire project lifecycle, from planning to deployment.</p>
                     <div className="hero-buttons">
                         <a href="#projects" className="btn btn-primary">View My Work</a>
                         <a href="#contact" className="btn btn-secondary">Get In Touch</a>
@@ -83,12 +83,14 @@ const Hero = () => {
 // About Section
 const About = () => {
     const skills = [
-        { name: 'JavaScript', level: 90 },
-        { name: 'React', level: 85 },
-        { name: 'Node.js', level: 80 },
-        { name: 'Python', level: 75 },
-        { name: 'CSS/SCSS', level: 85 },
-        { name: 'MongoDB', level: 70 }
+        { name: 'JavaScript (React/Vue/Express)', level: 95 },
+        { name: 'PHP & Laravel', level: 90 },
+        { name: 'Python', level: 85 },
+        { name: 'Google Apps Script', level: 90 },
+        { name: 'Project Management (Scrum/Agile)', level: 95 },
+        { name: 'UI/UX Design (Figma)', level: 80 },
+        { name: 'Docker & DevOps', level: 75 },
+        { name: 'Mobile Development', level: 70 }
     ];
 
     return (
@@ -99,28 +101,53 @@ const About = () => {
                     <div className="about-text">
                         <h3>Professional Summary</h3>
                         <p>
-                            I'm a passionate full-stack developer with 3+ years of experience in creating 
-                            web applications. I enjoy turning complex problems into simple, beautiful, 
-                            and intuitive solutions.
+                            In my roles, I blend my expertise in technical project management and full stack web development to drive impactful outcomes. With a keen eye for detail and a passion for problem-solving, I lead teams through the entire project lifecycle, from planning to deployment. My proficiency in both frontend and backend technologies allows me to create robust, user-friendly web applications.
                         </p>
                         <div className="experience">
-                            <h4>Experience</h4>
+                            <h4>Work Experience</h4>
                             <div className="experience-item">
-                                <h5>Senior Frontend Developer</h5>
-                                <p className="company">Tech Company Inc. (2022 - Present)</p>
+                                <h5>Advanced App Engineering Analyst</h5>
+                                <p className="company">Accenture (07.2024 - Current)</p>
                                 <ul>
-                                    <li>Led development of responsive web applications using React and TypeScript</li>
-                                    <li>Improved application performance by 40% through code optimization</li>
-                                    <li>Mentored junior developers and conducted code reviews</li>
+                                    <li>Google Apps Script Developer specializing in Google Workspace Foundations</li>
+                                    <li>Created custom scripts and add-ons to automate workflows across Google Sheets, Docs, Gmail, and Drive</li>
+                                    <li>Expertise in API integrations, data processing, and workflow automation</li>
                                 </ul>
                             </div>
                             <div className="experience-item">
-                                <h5>Full Stack Developer</h5>
-                                <p className="company">Digital Agency (2020 - 2022)</p>
+                                <h5>Technical Project Manager & Full Stack Web Developer</h5>
+                                <p className="company">Autofy.ai (02.2024 - 06.2024)</p>
                                 <ul>
-                                    <li>Built and maintained multiple client websites and web applications</li>
-                                    <li>Collaborated with design teams to implement pixel-perfect UIs</li>
-                                    <li>Developed RESTful APIs using Node.js and Express</li>
+                                    <li>Led development teams while actively contributing to coding efforts</li>
+                                    <li>Created and integrated RESTful APIs into React frontend applications</li>
+                                    <li>Utilized agile methodologies to guide project execution and foster collaboration</li>
+                                </ul>
+                            </div>
+                            <div className="experience-item">
+                                <h5>Full Stack Development Instructor</h5>
+                                <p className="company">Centrive (CTI) (06.2022 - 01.2024)</p>
+                                <ul>
+                                    <li>Taught full spectrum of web development including frontend and backend technologies</li>
+                                    <li>Covered deployment practices and UI/UX design principles</li>
+                                    <li>Empowered interns to create fully functional and visually appealing web applications</li>
+                                </ul>
+                            </div>
+                            <div className="experience-item">
+                                <h5>Intern Backend Web Developer</h5>
+                                <p className="company">Intelliseven Technologies Inc. (09.2023 - 12.2023)</p>
+                                <ul>
+                                    <li>Specialized in Node.js framework during 700-hour internship</li>
+                                    <li>Led backend development for comprehensive Daily Time Record (DTR) system</li>
+                                    <li>Ensured seamless integration and functionality, enhancing system efficiency</li>
+                                </ul>
+                            </div>
+                            <div className="experience-item">
+                                <h5>Freelance Full Stack Web Developer</h5>
+                                <p className="company">Self-Employed (07.2021 - Current)</p>
+                                <ul>
+                                    <li>Specialized in PHP, React, Arduino, and web services</li>
+                                    <li>Developed IoT solutions and hardware integrations</li>
+                                    <li>Delivered versatile solutions across various domains</li>
                                 </ul>
                             </div>
                         </div>
@@ -155,36 +182,47 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            title: "E-Commerce Platform",
-            description: "A full-stack e-commerce solution built with React and Node.js",
-            fullDescription: "This comprehensive e-commerce platform features user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
-            image: "https://via.placeholder.com/400x250/2196F3/white?text=E-Commerce",
-            technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-            liveUrl: "https://your-ecommerce-site.com",
-            githubUrl: "https://github.com/yourusername/ecommerce",
-            features: ["User Authentication", "Payment Integration", "Admin Dashboard", "Responsive Design"]
+            title: "Simptracker",
+            description: "OnlyFans content creation and management platform for creators",
+            fullDescription: "I oversaw the development and implementation of Simptracker within the constantly evolving digital sphere, where the fusion of technology and creativity revolutionizes content creation and sharing, specifically catering to OnlyFans creators. This platform helps creators manage their content workflow and analytics.",
+            image: "https://via.placeholder.com/400x250/2196F3/white?text=Simptracker",
+            technologies: ["React", "Node.js", "API Integration", "Project Management"],
+            liveUrl: "#",
+            githubUrl: "#",
+            features: ["Content Management", "Analytics Dashboard", "Creator Tools", "Workflow Automation"]
         },
         {
             id: 2,
-            title: "Task Management App",
-            description: "A collaborative task management application with real-time updates",
-            fullDescription: "A powerful task management application that allows teams to collaborate in real-time. Features include task assignment, progress tracking, real-time notifications, file attachments, and detailed project analytics.",
-            image: "https://via.placeholder.com/400x250/FF9800/white?text=Task+App",
-            technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
-            liveUrl: "https://your-task-app.com",
-            githubUrl: "https://github.com/yourusername/task-app",
-            features: ["Real-time Updates", "Team Collaboration", "Progress Tracking", "File Attachments"]
+            title: "FVA Chatting",
+            description: "Platform enhancement for OnlyFans agencies and creators",
+            fullDescription: "As FVA Chatting's web development project manager, I drove initiatives to boost platform appeal and profitability, propelling OnlyFans success for agencies and creators. The platform focuses on communication management and engagement optimization.",
+            image: "https://via.placeholder.com/400x250/FF9800/white?text=FVA+Chat",
+            technologies: ["React", "Real-time Chat", "Express", "MongoDB"],
+            liveUrl: "#",
+            githubUrl: "#",
+            features: ["Real-time Communication", "Agency Management", "Performance Analytics", "User Engagement Tools"]
         },
         {
             id: 3,
-            title: "Weather Dashboard",
-            description: "A responsive weather dashboard with location-based forecasts",
-            fullDescription: "An intuitive weather dashboard that provides current weather conditions, 7-day forecasts, and weather maps. Features location-based services, weather alerts, and beautiful data visualizations using Chart.js.",
-            image: "https://via.placeholder.com/400x250/9C27B0/white?text=Weather+App",
-            technologies: ["React", "API Integration", "Chart.js", "CSS3"],
-            liveUrl: "https://your-weather-app.com",
-            githubUrl: "https://github.com/yourusername/weather-app",
-            features: ["Location Services", "Weather Alerts", "Data Visualization", "Mobile Responsive"]
+            title: "Remimic",
+            description: "Advanced deepfake technology platform",
+            fullDescription: "I played a pivotal role in developing and managing a groundbreaking deepfake website, leveraging advanced replication techniques alongside my involvement in web development. The platform utilizes cutting-edge AI technology for content creation.",
+            image: "https://via.placeholder.com/400x250/9C27B0/white?text=Remimic",
+            technologies: ["React", "AI Integration", "Python", "Advanced APIs"],
+            liveUrl: "#",
+            githubUrl: "#",
+            features: ["AI Technology", "Content Replication", "Advanced Processing", "User-Friendly Interface"]
+        },
+        {
+            id: 4,
+            title: "Custom POS System - Kmroute21",
+            description: "Tailored Point-of-Sale system for business operations",
+            fullDescription: "Developed a tailored Point-of-Sale solution for order management, payment processing, inventory control, and reporting, ensuring business-specific needs are met. As a full-stack developer, I managed the design, deployment, and ongoing support to maintain optimal performance.",
+            image: "https://via.placeholder.com/400x250/4CAF50/white?text=POS+System",
+            technologies: ["PHP", "Laravel", "MySQL", "JavaScript"],
+            liveUrl: "#",
+            githubUrl: "#",
+            features: ["Order Management", "Payment Processing", "Inventory Control", "Business Reports"]
         }
     ];
 
@@ -281,35 +319,68 @@ const Certificates = () => {
     const certificates = [
         {
             id: 1,
-            title: "AWS Certified Developer",
-            issuer: "Amazon Web Services",
-            date: "2023",
-            image: "https://via.placeholder.com/300x200/FF6B35/white?text=AWS+Cert",
-            credentialUrl: "https://aws.amazon.com/certification/",
-            description: "Demonstrates expertise in developing and maintaining applications on the AWS platform.",
-            skills: ["Lambda Functions", "DynamoDB", "S3", "API Gateway", "CloudFormation"],
-            validUntil: "2026"
+            title: "Generative AI APIs for Practical Applications",
+            issuer: "Professional Development",
+            date: "03/27/25",
+            image: "https://via.placeholder.com/300x200/FF6B35/white?text=AI+APIs",
+            credentialUrl: "#",
+            description: "Introduction to practical applications of Generative AI APIs in real-world scenarios.",
+            skills: ["AI Integration", "API Development", "Machine Learning", "Automation"],
+            validUntil: "Lifetime"
         },
         {
             id: 2,
-            title: "React Developer Certification",
-            issuer: "Meta",
-            date: "2022",
-            image: "https://via.placeholder.com/300x200/61DAFB/white?text=React+Cert",
-            credentialUrl: "https://developers.facebook.com/certifications/",
-            description: "Validates proficiency in React development and modern JavaScript practices.",
-            skills: ["React Hooks", "State Management", "Component Architecture", "Testing"],
-            validUntil: "2025"
+            title: "Artificial Intelligence and Machine Learning",
+            issuer: "Professional Development",
+            date: "03/26/25",
+            image: "https://via.placeholder.com/300x200/61DAFB/white?text=AI+ML",
+            credentialUrl: "#",
+            description: "Comprehensive understanding of AI and Machine Learning principles and applications.",
+            skills: ["Machine Learning", "AI Algorithms", "Data Processing", "Neural Networks"],
+            validUntil: "Lifetime"
         },
         {
             id: 3,
-            title: "Full Stack Web Development",
-            issuer: "freeCodeCamp",
-            date: "2021",
-            image: "https://via.placeholder.com/300x200/0A0A23/white?text=FCC+Cert",
-            credentialUrl: "https://freecodecamp.org/certification/",
-            description: "Comprehensive certification covering front-end and back-end web development.",
-            skills: ["HTML/CSS", "JavaScript", "Node.js", "Database Design", "API Development"],
+            title: "Visual Studio Code Editor: Languages and Tasks",
+            issuer: "Professional Development",
+            date: "11/28/24",
+            image: "https://via.placeholder.com/300x200/0A0A23/white?text=VS+Code",
+            credentialUrl: "#",
+            description: "Advanced proficiency in Visual Studio Code for multi-language development.",
+            skills: ["IDE Mastery", "Multi-language Support", "Task Automation", "Development Tools"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 4,
+            title: "Contact Center Services NCII",
+            issuer: "TESDA",
+            date: "01/01/19",
+            image: "https://via.placeholder.com/300x200/4CAF50/white?text=TESDA",
+            credentialUrl: "#",
+            description: "National certification for contact center operations and customer service.",
+            skills: ["Customer Service", "Communication", "Problem Solving", "Technical Support"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 5,
+            title: "Programmer of the Year",
+            issuer: "AMACC Tacloban",
+            date: "01/01/19",
+            image: "https://via.placeholder.com/300x200/9C27B0/white?text=Award",
+            credentialUrl: "#",
+            description: "Recognition for outstanding programming achievement and excellence.",
+            skills: ["Programming Excellence", "Problem Solving", "Code Quality", "Innovation"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 6,
+            title: "Web Systems Student Teacher",
+            issuer: "Quezon City University",
+            date: "01/01/21",
+            image: "https://via.placeholder.com/300x200/FF5722/white?text=Teaching",
+            credentialUrl: "#",
+            description: "Teaching certification for web systems and development education.",
+            skills: ["Web Development", "Teaching", "Curriculum Design", "Student Mentoring"],
             validUntil: "Lifetime"
         }
     ];
@@ -418,21 +489,18 @@ const Contact = () => {
                         <div className="contact-details">
                             <div className="contact-item">
                                 <i className="fas fa-envelope"></i>
-                                <span>your.email@example.com</span>
-                            </div>
-                            <div className="contact-item">
-                                <i className="fas fa-phone"></i>
-                                <span>+1 (555) 123-4567</span>
+                                <span>ireneo.atenta@email.com</span>
                             </div>
                             <div className="contact-item">
                                 <i className="fas fa-map-marker-alt"></i>
-                                <span>Your City, Your Country</span>
+                                <span>Philippines</span>
                             </div>
                         </div>
                         <div className="social-links">
-                            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
-                            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/ireneo-atenta-770561252/" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/loop2113" target="_blank" rel="noopener noreferrer"><i className="fab fa-github"></i></a>
+                            <a href="https://stackoverflow.com/users/26643119/lime-husky" target="_blank" rel="noopener noreferrer"><i className="fab fa-stack-overflow"></i></a>
+                            <a href="https://www.upwork.com/freelancers/~01e2d2c2f7db76cdf2" target="_blank" rel="noopener noreferrer"><i className="fas fa-briefcase"></i></a>
                         </div>
                     </div>
                     <form className="contact-form" onSubmit={handleSubmit}>
@@ -479,7 +547,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
-                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <p>&copy; 2024 Ireneo Atenta. All rights reserved.</p>
             </div>
         </footer>
     );
