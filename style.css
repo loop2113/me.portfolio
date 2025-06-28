@@ -44,7 +44,7 @@ body {
 }
 
 .logo h2 {
-    color: #2196F3;
+    color: #114d88;
     font-size: 1.5rem;
 }
 
@@ -116,7 +116,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
+    background: linear-gradient(135deg, #022547 0%, #43a0ec 100%);
     color: white;
     padding-top: 80px;
 }
@@ -156,7 +156,7 @@ body {
 }
 
 .highlight {
-    color: #64B5F6;
+    color: #9dd0fa;
 }
 
 .hero-text h2 {
@@ -281,7 +281,7 @@ section {
 }
 
 .experience-item h5 {
-    color: #2196F3;
+    color: #114d88;
     margin-bottom: 0.5rem;
 }
 

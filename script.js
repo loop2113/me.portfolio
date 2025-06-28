@@ -64,7 +64,7 @@ const Hero = () => {
         <section id="home" className="hero">
             <div className="hero-content">
                 <div className="profile-image">
-                    <img src="images/profile.jpg" alt="Profile" />
+                    <img src="images/projects/profile.jpg" alt="Profile" />
                 </div>
                 <div className="hero-text">
                     <h1>Hi, I'm <span className="highlight">Ireneo Atenta</span></h1>
@@ -84,10 +84,10 @@ const Hero = () => {
 const About = () => {
     const skills = [
         { name: 'JavaScript (React/Vue/Express)', level: 95 },
-        { name: 'PHP & Laravel', level: 90 },
+        { name: 'PHP & Laravel', level: 80 },
         { name: 'Python', level: 85 },
-        { name: 'Google Apps Script', level: 90 },
-        { name: 'Project Management (Scrum/Agile)', level: 95 },
+        { name: 'Google Apps Script', level: 95 },
+        { name: 'Project Management (Scrum/Agile)', level: 90 },
         { name: 'UI/UX Design (Figma)', level: 80 },
         { name: 'Docker & DevOps', level: 75 },
         { name: 'Mobile Development', level: 70 }
@@ -182,43 +182,76 @@ const Projects = () => {
     const projects = [
         {
             id: 1,
-            title: "Simptracker",
-            description: "OnlyFans content creation and management platform for creators",
-            fullDescription: "I oversaw the development and implementation of Simptracker within the constantly evolving digital sphere, where the fusion of technology and creativity revolutionizes content creation and sharing, specifically catering to OnlyFans creators. This platform helps creators manage their content workflow and analytics.",
-            image: "https://via.placeholder.com/400x250/2196F3/white?text=Simptracker",
-            technologies: ["React", "Node.js", "API Integration", "Project Management"],
+            title: "San Miguel Barangay Portal",
+            description: "Digital platform for community services and certificate requests",
+            fullDescription: "Developed a one-stop digital platform for community services, updates, and certificate requests. The portal allows residents to stay connected with their local government and access online services 24/7. Key features include a resident registration system, certificate issuance tracking, and community updates.",
+            image: "images/projects/barangay-portal.png",
+            technologies: [
+                "React",
+                "Node.js",
+                "Express",
+                "PostgreSQL",
+                "JavaScript"
+            ],
             liveUrl: "#",
             githubUrl: "#",
-            features: ["Content Management", "Analytics Dashboard", "Creator Tools", "Workflow Automation"]
+            features: [
+                "Online Certificate Request",
+                "Registered Residents Database",
+                "Community Updates",
+                "24/7 Online Services"
+            ]
         },
         {
             id: 2,
-            title: "FVA Chatting",
-            description: "Platform enhancement for OnlyFans agencies and creators",
-            fullDescription: "As FVA Chatting's web development project manager, I drove initiatives to boost platform appeal and profitability, propelling OnlyFans success for agencies and creators. The platform focuses on communication management and engagement optimization.",
-            image: "https://via.placeholder.com/400x250/FF9800/white?text=FVA+Chat",
-            technologies: ["React", "Real-time Chat", "Express", "MongoDB"],
+            title: "Cockfight Management System",
+            description: "Comprehensive management & ticketing system for cockfighting events",
+            fullDescription: "I led the development of a comprehensive management and ticketing system for cockfighting events, focusing on enhancing user experience and operational efficiency. This project involved creating a robust platform that streamlines event management, ticket sales, and user engagement.",
+            image: "images/projects/cockfight.png",
+            technologies: ["Next.js", "Express", "MongoDB", "Tailwind CSS"],
             liveUrl: "#",
             githubUrl: "#",
-            features: ["Real-time Communication", "Agency Management", "Performance Analytics", "User Engagement Tools"]
+            features: ["Event Management", "Ticketing System", "User Authentication", "Real-time Notifications", "Role-Based Access Control", "Income Tracking", "Payment Integration"]
         },
         {
             id: 3,
             title: "Remimic",
             description: "Advanced deepfake technology platform",
             fullDescription: "I played a pivotal role in developing and managing a groundbreaking deepfake website, leveraging advanced replication techniques alongside my involvement in web development. The platform utilizes cutting-edge AI technology for content creation.",
-            image: "https://via.placeholder.com/400x250/9C27B0/white?text=Remimic",
-            technologies: ["React", "AI Integration", "Python", "Advanced APIs"],
+            image: "images/projects/remimic.png",
+            technologies: ["React", "AI Integration", "Express", "Advanced APIs"],
             liveUrl: "#",
             githubUrl: "#",
-            features: ["AI Technology", "Content Replication", "Advanced Processing", "User-Friendly Interface"]
+            features: ["AI Technology", "Content Replication", "Advanced Processing", "User-Friendly Interface, Payment Integration"]
         },
         {
             id: 4,
+            title: "FVA Chatting",
+            description: "Platform enhancement for OnlyFans agencies and creators",
+            fullDescription: "As FVA Chatting's web development project manager, I drove initiatives to boost platform appeal and profitability, propelling OnlyFans success for agencies and creators. The platform focuses on communication management and engagement optimization.",
+            image: "images/projects/fvachat.png",
+            technologies: ["React", "Real-time Chat", "Express", "MongoDB"],
+            liveUrl: "#",
+            githubUrl: "#",
+            features: ["Real-time Communication", "Agency Management", "Performance Analytics", "User Engagement Tools"]
+        },
+        {
+            id: 5,
+            title: "Simptracker",
+            description: "OnlyFans content creation and management platform for creators",
+            fullDescription: "I oversaw the development and implementation of Simptracker within the constantly evolving digital sphere, where the fusion of technology and creativity revolutionizes content creation and sharing, specifically catering to OnlyFans creators. This platform helps creators manage their content workflow and analytics.",
+            image: "images/projects/simptracker.png",
+            technologies: ["React", "Node.js", "Analytics", "Workflow Automation"],
+            liveUrl: "#",
+            githubUrl: "#",
+            features: ["Content Management", "Analytics Dashboard", "Creator Tools", "Workflow Automation"]
+        },
+        {
+            id: 6,
             title: "Custom POS System - Kmroute21",
             description: "Tailored Point-of-Sale system for business operations",
             fullDescription: "Developed a tailored Point-of-Sale solution for order management, payment processing, inventory control, and reporting, ensuring business-specific needs are met. As a full-stack developer, I managed the design, deployment, and ongoing support to maintain optimal performance.",
-            image: "https://via.placeholder.com/400x250/4CAF50/white?text=POS+System",
+            image: "images/projects/kmroute21.png",
             technologies: ["PHP", "Laravel", "MySQL", "JavaScript"],
             liveUrl: "#",
             githubUrl: "#",
@@ -243,9 +276,10 @@ const Projects = () => {
                                         >
                                             <i className="fas fa-eye"></i> View Details
                                         </button>
-                                        <a href={project.liveUrl} className="btn btn-small" target="_blank" rel="noopener noreferrer">
+                                        {project.liveUrl !== '#' ? (
+                                            <a href={project.liveUrl} className="btn btn-small" target="_blank" rel="noopener noreferrer">
                                             <i className="fas fa-external-link-alt"></i> Live Demo
-                                        </a>
+                                        </a>) : <> </>}
                                     </div>
                                 </div>
                             </div>
@@ -297,9 +331,9 @@ const Projects = () => {
                             </div>
 
                             <div className="modal-links">
-                                <a href={selectedProject.liveUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                               {selectedProject.liveUrl !== '#' && ( <a href={selectedProject.liveUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i className="fas fa-external-link-alt"></i> Live Demo
-                                </a>
+                                </a> )}
                                 <a href={selectedProject.githubUrl} className="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                                     <i className="fab fa-github"></i> View Code
                                 </a>
@@ -321,8 +355,8 @@ const Certificates = () => {
             id: 1,
             title: "Generative AI APIs for Practical Applications",
             issuer: "Professional Development",
-            date: "03/27/25",
-            image: "https://via.placeholder.com/300x200/FF6B35/white?text=AI+APIs",
+            date: "2025-03-27",
+            image: "images/certificates/generative-ai-apis.png",
             credentialUrl: "#",
             description: "Introduction to practical applications of Generative AI APIs in real-world scenarios.",
             skills: ["AI Integration", "API Development", "Machine Learning", "Automation"],
@@ -332,8 +366,8 @@ const Certificates = () => {
             id: 2,
             title: "Artificial Intelligence and Machine Learning",
             issuer: "Professional Development",
-            date: "03/26/25",
-            image: "https://via.placeholder.com/300x200/61DAFB/white?text=AI+ML",
+            date: "2025-03-26",
+            image: "images/certificates/ai-ml.png",
             credentialUrl: "#",
             description: "Comprehensive understanding of AI and Machine Learning principles and applications.",
             skills: ["Machine Learning", "AI Algorithms", "Data Processing", "Neural Networks"],
@@ -343,8 +377,8 @@ const Certificates = () => {
             id: 3,
             title: "Visual Studio Code Editor: Languages and Tasks",
             issuer: "Professional Development",
-            date: "11/28/24",
-            image: "https://via.placeholder.com/300x200/0A0A23/white?text=VS+Code",
+            date: "2024-11-28",
+            image: "images/certificates/vscode-editor.png",
             credentialUrl: "#",
             description: "Advanced proficiency in Visual Studio Code for multi-language development.",
             skills: ["IDE Mastery", "Multi-language Support", "Task Automation", "Development Tools"],
@@ -352,38 +386,149 @@ const Certificates = () => {
         },
         {
             id: 4,
-            title: "Contact Center Services NCII",
-            issuer: "TESDA",
-            date: "01/01/19",
-            image: "https://via.placeholder.com/300x200/4CAF50/white?text=TESDA",
+            title: "Working with WebLOAD",
+            issuer: "Percipio & Accenture",
+            date: "2024-11-27",
+            image: "images/certificates/percipio-webload.png",
             credentialUrl: "#",
-            description: "National certification for contact center operations and customer service.",
-            skills: ["Customer Service", "Communication", "Problem Solving", "Technical Support"],
+            description: "Certificate of Completion for the course 'Working with WebLOAD', covering WebLOAD 10.3.1. The course duration was 1 hour and 3 minutes.",
+            skills: ["WebLOAD", "Performance Testing", "Software Testing"],
             validUntil: "Lifetime"
         },
         {
             id: 5,
-            title: "Programmer of the Year",
-            issuer: "AMACC Tacloban",
-            date: "01/01/19",
-            image: "https://via.placeholder.com/300x200/9C27B0/white?text=Award",
+            title: "Defining a Project Scope and Team",
+            issuer: "Percipio & Accenture",
+            date: "2024-11-20",
+            image: "images/certificates/percipio-project-scope.png",
             credentialUrl: "#",
-            description: "Recognition for outstanding programming achievement and excellence.",
-            skills: ["Programming Excellence", "Problem Solving", "Code Quality", "Innovation"],
+            description: "Certificate of Completion for the course 'Defining a Project Scope and Team', with a duration of 22 minutes.",
+            skills: ["Project Management", "Scope Definition", "Team Building"],
             validUntil: "Lifetime"
         },
         {
             id: 6,
-            title: "Web Systems Student Teacher",
-            issuer: "Quezon City University",
-            date: "01/01/21",
-            image: "https://via.placeholder.com/300x200/FF5722/white?text=Teaching",
+            title: "Keeping Up With the Javascripts: ES6",
+            issuer: "Pirple.com",
+            date: "2024-10-08",
+            image: "images/certificates/pirple-es6.png",
             credentialUrl: "#",
-            description: "Teaching certification for web systems and development education.",
-            skills: ["Web Development", "Teaching", "Curriculum Design", "Student Mentoring"],
+            description: "Certificate for successfully completing the course 'Keeping Up With the Javascripts: ES6' on Pirple.com. Topics covered include Data Types, If-Statements, Operators, Functions, Switch Statements, Loops, the DOM, Template Literals, Destructuring, Exceptions, Object Oriented Programming, Classes, Callbacks, Promises, the Fetch API, Rest and Spread, Object Properties, Maps, Sets, and Build Tools.",
+            skills: ["JavaScript", "ES6", "DOM", "Object-Oriented Programming", "Asynchronous JavaScript", "Fetch API"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 7,
+            title: "Web Fundamentals: Web Development with HTML",
+            issuer: "Percipio & Accenture",
+            date: "2024-08-08",
+            image: "images/certificates/percipio-html.png",
+            credentialUrl: "#",
+            description: "Certificate of Completion for the course 'Web Fundamentals: Web Development with HTML', with a duration of 1 hour and 19 minutes.",
+            skills: ["HTML", "Web Development", "Web Fundamentals"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 8,
+            title: "JavaScript: Advanced Function Operations",
+            issuer: "Percipio & Accenture",
+            date: "2024-08-07",
+            image: "images/certificates/percipio-js-advanced.png",
+            credentialUrl: "#",
+            description: "Certificate of Completion for the course 'JavaScript: Advanced Function Operations' (ECMAScript 2019), with a duration of 42 minutes.",
+            skills: ["JavaScript", "ECMAScript 2019", "Advanced Functions"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 9,
+            title: "JavaScript: Functions & Arrays in JavaScript",
+            issuer: "Percipio & Accenture",
+            date: "2024-08-07",
+            image: "images/certificates/percipio-js-functions-arrays.png",
+            credentialUrl: "#",
+            description: "Certificate of Completion for the course 'JavaScript: Functions & Arrays in JavaScript' (ECMAScript 2019), with a duration of 1 hour and 44 minutes.",
+            skills: ["JavaScript", "ECMAScript 2019", "Functions", "Arrays"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 10,
+            title: "JavaScript: Introduction",
+            issuer: "Percipio & Accenture",
+            date: "2024-08-07",
+            image: "images/certificates/percipio-js-intro.png",
+            credentialUrl: "#",
+            description: "Certificate of Completion for the introductory course on JavaScript (ECMAScript 2019), with a duration of 59 minutes.",
+            skills: ["JavaScript", "ECMAScript 2019", "Programming Fundamentals"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 11,
+            title: "National Certificate III in Bookkeeping",
+            issuer: "Technical Education and Skills Development Authority (TESDA)",
+            date: "2019-11-16",
+            image: "images/certificates/tesda-bookkeeping.jpg",
+            credentialUrl: "https://www.tesda.gov.ph",
+            description: "National Certificate III for completing the competency requirements in Bookkeeping under the Philippine TVET Competency Assessment and Certification System. This certification covers basic, common, and core competencies in bookkeeping.",
+            skills: ["Bookkeeping", "Workplace Communication", "Teamwork", "Solving Workplace Problems", "Mathematical Concepts", "Relevant Technologies", "Quality Standards", "Customer Relations", "Personal Performance", "Journalizing Transactions", "Posting Transactions", "Trial Balance", "Financial Reports", "Internal Control"],
+            validUntil: "2024-11-15"
+        },
+        {
+            id: 12,
+            title: "Contact Center Services NC II",
+            issuer: "Eclaro Academy",
+            date: "2019-07-18",
+            image: "images/certificates/eclaro-contact-center-ncii.jpg",
+            credentialUrl: "#",
+            description: "Certificate of Completion for completing the competency requirements in Contact Center Services NC II under the Technical Education and Skills Development Authority (TESDA).",
+            skills: ["Participate in workplace communication", "Work in a team environment", "Practice career professionalism", "Practice occupational health and safety procedures", "Apply quality standards", "Perform computer operations", "Communicate effectively in English for customer service", "Perform customer service delivery processes", "Demonstrate ability to effectively engage customers"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 13,
+            title: "Best in Call Center Agent",
+            issuer: "TESDA - Eclaro Academy",
+            date: "2019-06-15",
+            image: "images/certificates/eclaro-call-center.jpg",
+            credentialUrl: "#",
+            description: "Recognition for commendable performance in Contact Center Services NC II, awarded as Best in Call Center Agent.",
+            skills: ["Customer Service", "Communication", "Call Center Operations", "Problem Solving"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 14,
+            title: "Programmer of the Year",
+            issuer: "AMA Computer College - Tacloban City, Inc.",
+            date: "2019-05-11",
+            image: "images/certificates/ama-programmer-of-the-year.png",
+            credentialUrl: "#",
+            description: "Award for Outstanding Performance and Excellence in Programming.",
+            skills: ["Programming", "Excellence", "Performance"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 15,
+            title: "Frontend Fundamentals",
+            issuer: "Pirple.com",
+            date: "2021-02-20",
+            image: "images/certificates/pirple-frontend.png",
+            credentialUrl: "#",
+            description: "Certificate for successfully passing the Pirple.com course 'Frontend Fundamentals', including all quizzes, homework, projects, and exams. The course covered HTML5 and CSS3 skills.",
+            skills: ["HTML5", "CSS3", "Responsive Web Design", "Frontend Development"],
+            validUntil: "Lifetime"
+        },
+        {
+            id: 16,
+            title: "Certificate of Appreciation Web Systems Teaching",
+            issuer: "Quezon City University",
+            date: "2021-02-11",
+            image: "images/certificates/qcu-appreciation.jpg",
+            credentialUrl: "#",
+            description: "Certificate of Appreciation for sharing and presenting knowledge in Web Systems.",
+            skills: ["Web Systems", "Public Speaking", "Knowledge Sharing"],
             validUntil: "Lifetime"
         }
     ];
+
 
     return (
         <section id="certificates" className="certificates">
@@ -442,12 +587,12 @@ const Certificates = () => {
                                     ))}
                                 </div>
                             </div>
-
+                            {selectedCertificate.credentialUrl !== '#' && (
                             <div className="modal-links">
                                 <a href={selectedCertificate.credentialUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                                     <i className="fas fa-external-link-alt"></i> Verify Credential
                                 </a>
-                            </div>
+                            </div>)}
                         </div>
                     </div>
                 )}
@@ -489,7 +634,7 @@ const Contact = () => {
                         <div className="contact-details">
                             <div className="contact-item">
                                 <i className="fas fa-envelope"></i>
-                                <span>ireneo.atenta@email.com</span>
+                                <span>ireneo.atenta211@gmail.com</span>
                             </div>
                             <div className="contact-item">
                                 <i className="fas fa-map-marker-alt"></i>
@@ -547,7 +692,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container">
-                <p>&copy; 2024 Ireneo Atenta. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Ireneo Atenta. All rights reserved.</p>
             </div>
         </footer>
     );
