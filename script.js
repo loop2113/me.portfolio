@@ -82,16 +82,23 @@ const Hero = () => {
 
 // About Section
 const About = () => {
-    const skills = [
-        { name: 'JavaScript (React/Vue/Express)', level: 95 },
-        { name: 'PHP & Laravel', level: 80 },
-        { name: 'Python', level: 85 },
-        { name: 'Google Apps Script', level: 95 },
-        { name: 'Project Management (Scrum/Agile)', level: 90 },
-        { name: 'UI/UX Design (Figma)', level: 80 },
-        { name: 'Docker & DevOps', level: 75 },
-        { name: 'Mobile Development', level: 70 }
-    ];
+const skills = [
+    { name: 'JavaScript (React, Vue, Express)', level: 95 },
+    { name: 'Python (Pandas, NumPy)', level: 90 },
+    { name: 'SQL (Data Querying & Optimization)', level: 90 },
+    { name: 'Data Analysis & Data Cleaning', level: 95 },
+    { name: 'Google Sheets (Advanced: Formulas, Pivot Tables, Apps Script integration)', level: 90 },
+    { name: 'Google Apps Script', level: 95 },
+    { name: 'Google Workspace Automation', level: 90 },
+    { name: 'Power BI / Data Visualization', level: 85 },
+    { name: 'Tableau / Dashboarding', level: 80 },
+    { name: 'Statistics & Data Interpretation', level: 85 },
+    { name: 'ETL Processes (Extract, Transform, Load)', level: 80 },
+    { name: 'Project Management (Scrum, Agile)', level: 90 },
+    { name: 'UI/UX Design (Figma)', level: 80 },
+    { name: 'Docker & DevOps Basics', level: 75 },
+    { name: 'Mobile Development', level: 70 }
+];
 
     return (
         <section id="about" className="about">
@@ -107,18 +114,17 @@ const About = () => {
                             <h4>Work Experience</h4>
                             <div className="experience-item">
                                 <h5>Advanced App Engineering Analyst</h5>
+                                <p className="company">Accenture (07.2024 - Current)</p>
 
-                                <h6>Data Analyst | Business Analyst</h6>
-                                <p className="company">Accenture (12.2023 - 06.2024)</p>
+                                <h6>Data Analyst | Business Analyst (12.2025 - 06.2026)</h6>
                                 <ul>
                                     <li>Analyzed and validated datasets to support business operations and reporting.</li>
                                     <li>Prepared and transformed data to improve accuracy, consistency, and usability.</li>
                                     <li>Created reports and dashboards to provide insights for stakeholders.</li>
                                     <li>Collaborated with cross-functional teams to resolve data quality issues and support project requirements.</li>
                                 </ul>
-                                
-                                <h6>Full Stack Developer Support</h6>
-                                <p className="company">Accenture (07.2024 - 11.25)</p>
+
+                                <h6>Full Stack Developer Support (07.2024 - 11.2025)</h6>
                                 <ul>
                                     <li>Google Apps Script Developer specializing in Google Workspace Foundations</li>
                                     <li>Created custom scripts and add-ons to automate workflows across Google Sheets, Docs, Gmail, and Drive</li>
