@@ -107,7 +107,18 @@ const About = () => {
                             <h4>Work Experience</h4>
                             <div className="experience-item">
                                 <h5>Advanced App Engineering Analyst</h5>
-                                <p className="company">Accenture (07.2024 - Current)</p>
+
+                                <h6>Data Analyst | Business Analyst</h6>
+                                <p className="company">Accenture (12.2023 - 06.2024)</p>
+                                <ul>
+                                    <li>Analyzed and validated datasets to support business operations and reporting.</li>
+                                    <li>Prepared and transformed data to improve accuracy, consistency, and usability.</li>
+                                    <li>Created reports and dashboards to provide insights for stakeholders.</li>
+                                    <li>Collaborated with cross-functional teams to resolve data quality issues and support project requirements.</li>
+                                </ul>
+                                
+                                <h6>Full Stack Developer Support</h6>
+                                <p className="company">Accenture (07.2024 - 11.25)</p>
                                 <ul>
                                     <li>Google Apps Script Developer specializing in Google Workspace Foundations</li>
                                     <li>Created custom scripts and add-ons to automate workflows across Google Sheets, Docs, Gmail, and Drive</li>
