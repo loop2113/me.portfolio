@@ -115,6 +115,13 @@ const skills = [
                             <div className="experience-item">
                                 <h5>Advanced App Engineering Analyst</h5>
                                 <p className="company">Accenture (07.2024 - Current)</p>
+                                <h6>Full Stack Developer (07.2024 - Present)</h6>
+                                <ul>
+                                    <li>Developed and maintained web applications using React for frontend development and C# for backend development.</li>
+                                    <li>Built and integrated REST APIs to support application features and frontend functionality.</li>
+                                    <li>Worked with SQL databases for data storage, queries, and application operations.</li>
+                                    <li>Collaborated with stakeholders and development teams to implement requirements and resolve technical issues.</li>
+                                </ul>
 
                                 <h6>Data Analyst | Business Analyst (12.2025 - 06.2026)</h6>
                                 <ul>
@@ -132,14 +139,17 @@ const skills = [
                                 </ul>
                             </div>
                             <div className="experience-item">
-                                <h5>Technical Project Manager & Full Stack Web Developer</h5>
-                                <p className="company">Autofy.ai (02.2024 - 06.2024)</p>
-                                <ul>
-                                    <li>Led development teams while actively contributing to coding efforts</li>
-                                    <li>Created and integrated RESTful APIs into React frontend applications</li>
-                                    <li>Utilized agile methodologies to guide project execution and foster collaboration</li>
-                                </ul>
-                            </div>
+
+                        <h5>Technical Project Manager & Full Stack Web Developer</h5>
+                        <p className="company">FVA Chatting, Remimic & Simptracker (02.2024 - 06.2024)</p>
+                            <ul>
+                                <li>Led and managed web development projects while actively contributing to frontend and backend development.</li>
+                                <li>Developed and maintained web applications using React, Node.js, Express, and MongoDB.</li>
+                                <li>Integrated RESTful APIs and third-party services to support application functionality and workflows.</li>
+                                <li>Worked closely with clients, stakeholders, and development teams to gather requirements and deliver project solutions.</li>
+                                <li>Applied Agile methodologies, sprint planning, and task management to ensure timely project delivery.</li>
+                            </ul>
+                        </div>  
                             <div className="experience-item">
                                 <h5>Full Stack Development Instructor</h5>
                                 <p className="company">Centrive (CTI) (06.2022 - 01.2024)</p>
@@ -197,83 +207,130 @@ const Projects = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     const projects = [
-        {
-            id: 1,
-            title: "San Miguel Barangay Portal",
-            description: "Digital platform for community services and certificate requests",
-            fullDescription: "Developed a one-stop digital platform for community services, updates, and certificate requests. The portal allows residents to stay connected with their local government and access online services 24/7. Key features include a resident registration system, certificate issuance tracking, and community updates.",
-            image: "images/projects/barangay-portal.png",
-            technologies: [
-                "React",
-                "Node.js",
-                "Express",
-                "PostgreSQL",
-                "JavaScript"
-            ],
-            liveUrl: "#",
-            githubUrl: "#",
-            features: [
-                "Online Certificate Request",
-                "Registered Residents Database",
-                "Community Updates",
-                "24/7 Online Services"
-            ]
-        },
-        {
-            id: 2,
-            title: "Cockfight Management System",
-            description: "Comprehensive management & ticketing system for cockfighting events",
-            fullDescription: "I led the development of a comprehensive management and ticketing system for cockfighting events, focusing on enhancing user experience and operational efficiency. This project involved creating a robust platform that streamlines event management, ticket sales, and user engagement.",
-            image: "images/projects/cockfight.png",
-            technologies: ["Next.js", "Express", "MongoDB", "Tailwind CSS"],
-            liveUrl: "#",
-            githubUrl: "#",
-            features: ["Event Management", "Ticketing System", "User Authentication", "Real-time Notifications", "Role-Based Access Control", "Income Tracking", "Payment Integration"]
-        },
-        {
-            id: 3,
-            title: "Remimic",
-            description: "Advanced deepfake technology platform",
-            fullDescription: "I played a pivotal role in developing and managing a groundbreaking deepfake website, leveraging advanced replication techniques alongside my involvement in web development. The platform utilizes cutting-edge AI technology for content creation.",
-            image: "images/projects/remimic.png",
-            technologies: ["React", "AI Integration", "Express", "Advanced APIs"],
-            liveUrl: "#",
-            githubUrl: "#",
-            features: ["AI Technology", "Content Replication", "Advanced Processing", "User-Friendly Interface, Payment Integration"]
-        },
-        {
-            id: 4,
-            title: "FVA Chatting",
-            description: "Platform enhancement for OnlyFans agencies and creators",
-            fullDescription: "As FVA Chatting's web development project manager, I drove initiatives to boost platform appeal and profitability, propelling OnlyFans success for agencies and creators. The platform focuses on communication management and engagement optimization.",
-            image: "images/projects/fvachat.png",
-            technologies: ["React", "Real-time Chat", "Express", "MongoDB"],
-            liveUrl: "#",
-            githubUrl: "#",
-            features: ["Real-time Communication", "Agency Management", "Performance Analytics", "User Engagement Tools"]
-        },
-        {
-            id: 5,
-            title: "Simptracker",
-            description: "OnlyFans content creation and management platform for creators",
-            fullDescription: "I oversaw the development and implementation of Simptracker within the constantly evolving digital sphere, where the fusion of technology and creativity revolutionizes content creation and sharing, specifically catering to OnlyFans creators. This platform helps creators manage their content workflow and analytics.",
-            image: "images/projects/simptracker.png",
-            technologies: ["React", "Node.js", "Analytics", "Workflow Automation"],
-            liveUrl: "#",
-            githubUrl: "#",
-            features: ["Content Management", "Analytics Dashboard", "Creator Tools", "Workflow Automation"]
-        },
-        {
-            id: 6,
-            title: "Custom POS System - Kmroute21",
-            description: "Tailored Point-of-Sale system for business operations",
-            fullDescription: "Developed a tailored Point-of-Sale solution for order management, payment processing, inventory control, and reporting, ensuring business-specific needs are met. As a full-stack developer, I managed the design, deployment, and ongoing support to maintain optimal performance.",
-            image: "images/projects/kmroute21.png",
-            technologies: ["PHP", "Laravel", "MySQL", "JavaScript"],
-            liveUrl: "#",
-            githubUrl: "#",
-            features: ["Order Management", "Payment Processing", "Inventory Control", "Business Reports"]
-        }
+       {
+        id: 1,
+        title: "Property Management Portal",
+        description: "Property management and resident portal for condos and communities",
+        fullDescription: "Developed a property management platform that helps administrators manage properties, residents, billing, payments, maintenance, and announcements while providing residents with a personalized portal for their property and account.",
+        image: "images/projects/crm-realstate-portal.png",
+        technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Axios"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Property & Resident Management",
+            "Billing & Payment Tracking",
+            "Maintenance Requests",
+            "Community Announcements",
+            "Resident Portal",
+            "Role-Based Access Control"
+        ]
+    },
+    {
+        id: 2,
+        title: "San Miguel Barangay Portal",
+        description: "Digital platform for community services and certificate requests",
+        fullDescription: "Developed a one-stop digital platform for community services, updates, and certificate requests. The portal allows residents to stay connected with their local government and access online services 24/7. Key features include a resident registration system, certificate issuance tracking, and community updates.",
+        image: "images/projects/barangay-portal.png",
+        technologies: [
+            "React",
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "JavaScript"
+        ],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Online Certificate Request",
+            "Registered Residents Database",
+            "Community Updates",
+            "24/7 Online Services"
+        ]
+    },
+    {
+        id: 3,
+        title: "Cockfight Management System",
+        description: "Comprehensive management & ticketing system for cockfighting events",
+        fullDescription: "I led the development of a comprehensive management and ticketing system for cockfighting events, focusing on enhancing user experience and operational efficiency. This project involved creating a robust platform that streamlines event management, ticket sales, and user engagement.",
+        image: "images/projects/cockfight.png",
+        technologies: ["Next.js", "Express", "MongoDB", "Tailwind CSS"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Event Management",
+            "Ticketing System",
+            "User Authentication",
+            "Real-time Notifications",
+            "Role-Based Access Control",
+            "Income Tracking",
+            "Payment Integration"
+        ]
+    },
+    {
+        id: 4,
+        title: "Remimic",
+        description: "AI-powered media generation platform",
+        fullDescription: "Played a key role in developing and managing an AI-powered media generation platform, contributing to web development, API integrations, and user-facing features for AI-generated content.",
+        image: "images/projects/remimic.png",
+        technologies: ["React", "Next.js", "AI Integration", "Express", "APIs"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "AI Content Generation",
+            "Media Processing",
+            "API Integration",
+            "Subscription Management",
+            "User-Friendly Interface"
+        ]
+    },
+    {
+        id: 5,
+        title: "FVA Chatting",
+        description: "Communication and management platform for agencies and creators",
+        fullDescription: "As a web development project manager, I helped drive the development of a communication and management platform designed to improve workflow, engagement, and operational efficiency for agencies and creators.",
+        image: "images/projects/fvachat.png",
+        technologies: ["React", "Real-time Chat", "Express", "MongoDB"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Real-time Communication",
+            "Agency Management",
+            "Performance Analytics",
+            "User Engagement Tools"
+        ]
+    },
+    {
+        id: 6,
+        title: "Simptracker",
+        description: "Content creation and management platform for creators",
+        fullDescription: "Oversaw the development and implementation of a digital platform focused on content management, analytics, and workflow automation, helping creators organize their content and improve their overall workflow.",
+        image: "images/projects/simptracker.png",
+        technologies: ["React", "Node.js", "Analytics", "Workflow Automation"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Content Management",
+            "Analytics Dashboard",
+            "Creator Tools",
+            "Workflow Automation"
+        ]
+    },
+    {
+        id: 7,
+        title: "Custom POS System - Kmroute21",
+        description: "Tailored Point-of-Sale system for business operations",
+        fullDescription: "Developed a tailored Point-of-Sale solution for order management, payment processing, inventory control, and reporting, ensuring business-specific needs are met. As a full-stack developer, I managed the design, deployment, and ongoing support to maintain optimal performance.",
+        image: "images/projects/kmroute21.png",
+        technologies: ["PHP", "Laravel", "MySQL", "JavaScript"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Order Management",
+            "Payment Processing",
+            "Inventory Control",
+            "Business Reports"
+        ]
+    }
     ];
 
     return (
