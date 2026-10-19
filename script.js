@@ -330,6 +330,43 @@ const Projects = () => {
             "Inventory Control",
             "Business Reports"
         ]
+    },
+    {
+        id: 8,
+        title: "EquityDeals Mobile CRM",
+        description: "Mobile CRM for real-estate investors",
+        fullDescription: "Built a Flutter mobile CRM for real-estate investors that brings team SMS inboxes, calling, contacts, calendar, and tasks together across multiple sub-accounts. The UI follows Material 3 with a centralized color palette, so every screen supports Light, Dark, and System themes.",
+        image: "images/projects/equitydeals.png",
+        technologies: ["Flutter", "Dart", "Material 3"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Team SMS Inboxes",
+            "Calling",
+            "Contacts Management",
+            "Calendar & Appointments",
+            "Task Management",
+            "Multiple Sub-Accounts",
+            "Light, Dark & System Themes"
+        ]
+    },
+    {
+        id: 9,
+        title: "Simply List Now Mobile CRM",
+        description: "Mobile CRM for real-estate agents",
+        fullDescription: "Built a Flutter mobile CRM for real-estate agents that keeps people, inbox, tasks, calendar, and deals in one phone app. It uses a Material 3 structure with the EquityDeals palette in Light and Dark themes.",
+        image: "images/projects/simplylist.png",
+        technologies: ["Flutter", "Dart", "Material 3"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "People & Contacts",
+            "Inbox",
+            "Tasks",
+            "Calendar",
+            "Deal Tracking",
+            "Light & Dark Themes"
+        ]
     }
     ];
 
