@@ -209,6 +209,43 @@ const Projects = () => {
     const projects = [
        {
         id: 1,
+        title: "EquityDeals Mobile CRM",
+        description: "Mobile CRM for real-estate investors",
+        fullDescription: "Built a Flutter mobile CRM for real-estate investors that brings team SMS inboxes, calling, contacts, calendar, and tasks together across multiple sub-accounts. The UI follows Material 3 with a centralized color palette, so every screen supports Light, Dark, and System themes.",
+        image: "images/projects/equitydeals.png",
+        technologies: ["Flutter", "Dart", "Material 3"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "Team SMS Inboxes",
+            "Calling",
+            "Contacts Management",
+            "Calendar & Appointments",
+            "Task Management",
+            "Multiple Sub-Accounts",
+            "Light, Dark & System Themes"
+        ]
+    },
+    {
+        id: 2,
+        title: "Simply List Now Mobile CRM",
+        description: "Mobile CRM for real-estate agents",
+        fullDescription: "Built a Flutter mobile CRM for real-estate agents that keeps people, inbox, tasks, calendar, and deals in one phone app. It uses a Material 3 structure with the EquityDeals palette in Light and Dark themes.",
+        image: "images/projects/simplylist.png",
+        technologies: ["Flutter", "Dart", "Material 3"],
+        liveUrl: "#",
+        githubUrl: "#",
+        features: [
+            "People & Contacts",
+            "Inbox",
+            "Tasks",
+            "Calendar",
+            "Deal Tracking",
+            "Light & Dark Themes"
+        ]
+    },
+    {
+        id: 3,
         title: "Property Management Portal",
         description: "Property management and resident portal for condos and communities",
         fullDescription: "Developed a property management platform that helps administrators manage properties, residents, billing, payments, maintenance, and announcements while providing residents with a personalized portal for their property and account.",
@@ -226,7 +263,7 @@ const Projects = () => {
         ]
     },
     {
-        id: 2,
+        id: 4,
         title: "San Miguel Barangay Portal",
         description: "Digital platform for community services and certificate requests",
         fullDescription: "Developed a one-stop digital platform for community services, updates, and certificate requests. The portal allows residents to stay connected with their local government and access online services 24/7. Key features include a resident registration system, certificate issuance tracking, and community updates.",
@@ -248,7 +285,7 @@ const Projects = () => {
         ]
     },
     {
-        id: 3,
+        id: 5,
         title: "Cockfight Management System",
         description: "Comprehensive management & ticketing system for cockfighting events",
         fullDescription: "I led the development of a comprehensive management and ticketing system for cockfighting events, focusing on enhancing user experience and operational efficiency. This project involved creating a robust platform that streamlines event management, ticket sales, and user engagement.",
@@ -267,7 +304,7 @@ const Projects = () => {
         ]
     },
     {
-        id: 4,
+        id: 6,
         title: "Remimic",
         description: "AI-powered media generation platform",
         fullDescription: "Played a key role in developing and managing an AI-powered media generation platform, contributing to web development, API integrations, and user-facing features for AI-generated content.",
@@ -284,7 +321,7 @@ const Projects = () => {
         ]
     },
     {
-        id: 5,
+        id: 7,
         title: "FVA Chatting",
         description: "Communication and management platform for agencies and creators",
         fullDescription: "As a web development project manager, I helped drive the development of a communication and management platform designed to improve workflow, engagement, and operational efficiency for agencies and creators.",
@@ -300,7 +337,7 @@ const Projects = () => {
         ]
     },
     {
-        id: 6,
+        id: 8,
         title: "Simptracker",
         description: "Content creation and management platform for creators",
         fullDescription: "Oversaw the development and implementation of a digital platform focused on content management, analytics, and workflow automation, helping creators organize their content and improve their overall workflow.",
@@ -316,7 +353,7 @@ const Projects = () => {
         ]
     },
     {
-        id: 7,
+        id: 9,
         title: "Custom POS System - Kmroute21",
         description: "Tailored Point-of-Sale system for business operations",
         fullDescription: "Developed a tailored Point-of-Sale solution for order management, payment processing, inventory control, and reporting, ensuring business-specific needs are met. As a full-stack developer, I managed the design, deployment, and ongoing support to maintain optimal performance.",
@@ -331,43 +368,6 @@ const Projects = () => {
             "Business Reports"
         ]
     },
-    {
-        id: 8,
-        title: "EquityDeals Mobile CRM",
-        description: "Mobile CRM for real-estate investors",
-        fullDescription: "Built a Flutter mobile CRM for real-estate investors that brings team SMS inboxes, calling, contacts, calendar, and tasks together across multiple sub-accounts. The UI follows Material 3 with a centralized color palette, so every screen supports Light, Dark, and System themes.",
-        image: "images/projects/equitydeals.png",
-        technologies: ["Flutter", "Dart", "Material 3"],
-        liveUrl: "#",
-        githubUrl: "#",
-        features: [
-            "Team SMS Inboxes",
-            "Calling",
-            "Contacts Management",
-            "Calendar & Appointments",
-            "Task Management",
-            "Multiple Sub-Accounts",
-            "Light, Dark & System Themes"
-        ]
-    },
-    {
-        id: 9,
-        title: "Simply List Now Mobile CRM",
-        description: "Mobile CRM for real-estate agents",
-        fullDescription: "Built a Flutter mobile CRM for real-estate agents that keeps people, inbox, tasks, calendar, and deals in one phone app. It uses a Material 3 structure with the EquityDeals palette in Light and Dark themes.",
-        image: "images/projects/simplylist.png",
-        technologies: ["Flutter", "Dart", "Material 3"],
-        liveUrl: "#",
-        githubUrl: "#",
-        features: [
-            "People & Contacts",
-            "Inbox",
-            "Tasks",
-            "Calendar",
-            "Deal Tracking",
-            "Light & Dark Themes"
-        ]
-    }
     ];
 
     return (
