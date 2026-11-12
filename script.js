@@ -460,11 +460,13 @@ const Projects = () => {
 // Certificates Section
 const Certificates = () => {
     const [selectedCertificate, setSelectedCertificate] = useState(null);
+    const [activeCategory, setActiveCategory] = useState('All');
 
     const certificates = [
         {
             id: 1,
             title: "Generative AI APIs for Practical Applications",
+            category: "AI & Machine Learning",
             issuer: "Professional Development",
             date: "2025-03-27",
             image: "images/certificates/generative-ai-apis.png",
@@ -476,6 +478,7 @@ const Certificates = () => {
         {
             id: 2,
             title: "Artificial Intelligence and Machine Learning",
+            category: "AI & Machine Learning",
             issuer: "Professional Development",
             date: "2025-03-26",
             image: "images/certificates/ai-ml.png",
@@ -487,6 +490,7 @@ const Certificates = () => {
         {
             id: 3,
             title: "Visual Studio Code Editor: Languages and Tasks",
+            category: "Programming & Software",
             issuer: "Professional Development",
             date: "2024-11-28",
             image: "images/certificates/vscode-editor.png",
@@ -498,6 +502,7 @@ const Certificates = () => {
         {
             id: 4,
             title: "Working with WebLOAD",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2024-11-27",
             image: "images/certificates/percipio-webload.png",
@@ -509,6 +514,7 @@ const Certificates = () => {
         {
             id: 5,
             title: "Defining a Project Scope and Team",
+            category: "Project Management & Agile",
             issuer: "Percipio & Accenture",
             date: "2024-11-20",
             image: "images/certificates/percipio-project-scope.png",
@@ -520,6 +526,7 @@ const Certificates = () => {
         {
             id: 6,
             title: "Keeping Up With the Javascripts: ES6",
+            category: "Web Development",
             issuer: "Pirple.com",
             date: "2024-10-08",
             image: "images/certificates/pirple-es6.png",
@@ -531,6 +538,7 @@ const Certificates = () => {
         {
             id: 7,
             title: "Web Fundamentals: Web Development with HTML",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2024-08-08",
             image: "images/certificates/percipio-html.png",
@@ -542,6 +550,7 @@ const Certificates = () => {
         {
             id: 8,
             title: "JavaScript: Advanced Function Operations",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2024-08-07",
             image: "images/certificates/percipio-js-advanced.png",
@@ -553,6 +562,7 @@ const Certificates = () => {
         {
             id: 9,
             title: "JavaScript: Functions & Arrays in JavaScript",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2024-08-07",
             image: "images/certificates/percipio-js-functions-arrays.png",
@@ -564,6 +574,7 @@ const Certificates = () => {
         {
             id: 10,
             title: "JavaScript: Introduction",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2024-08-07",
             image: "images/certificates/percipio-js-intro.png",
@@ -575,6 +586,7 @@ const Certificates = () => {
         {
             id: 11,
             title: "National Certificate III in Bookkeeping",
+            category: "Awards & Training",
             issuer: "Technical Education and Skills Development Authority (TESDA)",
             date: "2019-11-16",
             image: "images/certificates/tesda-bookkeeping.jpg",
@@ -586,6 +598,7 @@ const Certificates = () => {
         {
             id: 12,
             title: "Contact Center Services NC II",
+            category: "Awards & Training",
             issuer: "Eclaro Academy",
             date: "2019-07-18",
             image: "images/certificates/eclaro-contact-center-ncii.jpg",
@@ -597,6 +610,7 @@ const Certificates = () => {
         {
             id: 13,
             title: "Best in Call Center Agent",
+            category: "Awards & Training",
             issuer: "TESDA - Eclaro Academy",
             date: "2019-06-15",
             image: "images/certificates/eclaro-call-center.jpg",
@@ -608,6 +622,7 @@ const Certificates = () => {
         {
             id: 14,
             title: "Programmer of the Year",
+            category: "Awards & Training",
             issuer: "AMA Computer College - Tacloban City, Inc.",
             date: "2019-05-11",
             image: "images/certificates/ama-programmer-of-the-year.png",
@@ -619,6 +634,7 @@ const Certificates = () => {
         {
             id: 15,
             title: "Frontend Fundamentals",
+            category: "Web Development",
             issuer: "Pirple.com",
             date: "2021-02-20",
             image: "images/certificates/pirple-frontend.png",
@@ -630,6 +646,7 @@ const Certificates = () => {
         {
             id: 16,
             title: "Certificate of Appreciation Web Systems Teaching",
+            category: "Awards & Training",
             issuer: "Quezon City University",
             date: "2021-02-11",
             image: "images/certificates/qcu-appreciation.jpg",
@@ -641,6 +658,7 @@ const Certificates = () => {
         {
             id: 17,
             title: "Agile Project Planning",
+            category: "Project Management & Agile",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/agile-project-planning.png",
@@ -652,6 +670,7 @@ const Certificates = () => {
         {
             id: 18,
             title: "Automation Design & Robotics",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/automation-design-robotics.png",
@@ -663,6 +682,7 @@ const Certificates = () => {
         {
             id: 19,
             title: "Being an Effective Team Member",
+            category: "Teamwork & Soft Skills",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/being-an-effective-team-member.png",
@@ -674,6 +694,7 @@ const Certificates = () => {
         {
             id: 20,
             title: "CCSP 2019: Identity & Access Management",
+            category: "Cloud & Security",
             issuer: "Percipio & Accenture",
             date: "2025-07-17",
             image: "images/certificates/ccsp-2019-identity-access-management.png",
@@ -685,6 +706,7 @@ const Certificates = () => {
         {
             id: 21,
             title: "CCSP 2022: Cloud Security Concepts & Design Principles",
+            category: "Cloud & Security",
             issuer: "Percipio & Accenture",
             date: "2025-07-20",
             image: "images/certificates/ccsp-2022-cloud-security-concepts-design-principles.png",
@@ -696,6 +718,7 @@ const Certificates = () => {
         {
             id: 22,
             title: "Cloud Computing Fundamentals: Introduction",
+            category: "Cloud & Security",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/cloud-computing-fundamentals-introduction.png",
@@ -707,6 +730,7 @@ const Certificates = () => {
         {
             id: 23,
             title: "Code Quality, Testing, & Development",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/code-quality-testing-development.png",
@@ -718,6 +742,7 @@ const Certificates = () => {
         {
             id: 24,
             title: "Data Access & Governance Policies: Data Classification, Encryption, & Monitoring",
+            category: "Cloud & Security",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/data-access-governance-policies-data-classification-encryption-monitoring.png",
@@ -729,6 +754,7 @@ const Certificates = () => {
         {
             id: 25,
             title: "Effective Team Communication",
+            category: "Teamwork & Soft Skills",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/effective-team-communication.png",
@@ -740,6 +766,7 @@ const Certificates = () => {
         {
             id: 26,
             title: "Embracing Agile at Scale",
+            category: "Project Management & Agile",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/embracing-agile-at-scale.png",
@@ -751,6 +778,7 @@ const Certificates = () => {
         {
             id: 27,
             title: "Exploring Business Process Automation",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/exploring-business-process-automation.png",
@@ -762,6 +790,7 @@ const Certificates = () => {
         {
             id: 28,
             title: "Getting Started with Go: Introducing Go Programming Language",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-12-04",
             image: "images/certificates/getting-started-with-go-introducing-go-programming-language.png",
@@ -773,6 +802,7 @@ const Certificates = () => {
         {
             id: 29,
             title: "Git & GitHub: Introduction",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/git-github-introduction.png",
@@ -784,6 +814,7 @@ const Certificates = () => {
         {
             id: 30,
             title: "Go Language Basics",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-12-03",
             image: "images/certificates/go-language-basics.png",
@@ -795,6 +826,7 @@ const Certificates = () => {
         {
             id: 31,
             title: "How to Transform Tables with SQL",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-11-06",
             image: "images/certificates/how-to-transform-tables-with-sql.png",
@@ -806,6 +838,7 @@ const Certificates = () => {
         {
             id: 32,
             title: "Hybrid Environment Pipelines: Hybrid Cloud Transformation",
+            category: "Cloud & Security",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/hybrid-environment-pipelines-hybrid-cloud-transformation.png",
@@ -817,6 +850,7 @@ const Certificates = () => {
         {
             id: 33,
             title: "Identifying Risk (PMBOK Guide Sixth Edition)",
+            category: "Project Management & Agile",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/identifying-risk-pmbok-guide-sixth-edition.png",
@@ -828,6 +862,7 @@ const Certificates = () => {
         {
             id: 34,
             title: "Inside Agentic AI: Popular Frameworks",
+            category: "AI & Machine Learning",
             issuer: "Percipio & Accenture",
             date: "2026-07-27",
             image: "images/certificates/inside-agentic-ai-popular-frameworks.png",
@@ -839,6 +874,7 @@ const Certificates = () => {
         {
             id: 35,
             title: "JavaScript Destructuring",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2026-09-04",
             image: "images/certificates/javascript-destructuring.png",
@@ -850,6 +886,7 @@ const Certificates = () => {
         {
             id: 36,
             title: "Leading Security Teams for GenAI Solutions: Use of Generative AI",
+            category: "AI & Machine Learning",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/leading-security-teams-for-genai-solutions-use-of-generative-ai.png",
@@ -861,6 +898,7 @@ const Certificates = () => {
         {
             id: 37,
             title: "PRINCE2 Project Management Overview (2017 Update)",
+            category: "Project Management & Agile",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/prince2-project-management-overview-2017-update.png",
@@ -872,6 +910,7 @@ const Certificates = () => {
         {
             id: 38,
             title: "React Virtual DOM",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2026-09-04",
             image: "images/certificates/react-virtual-dom.png",
@@ -883,6 +922,7 @@ const Certificates = () => {
         {
             id: 39,
             title: "Responsible Use of AI",
+            category: "AI & Machine Learning",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/responsible-use-of-ai.png",
@@ -894,6 +934,7 @@ const Certificates = () => {
         {
             id: 40,
             title: "Smart Contracts & Hyperledger Fabric: Working with Fabric Chaincode in Golang",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-12-03",
             image: "images/certificates/smart-contracts-hyperledger-fabric-working-with-fabric-chaincode-in-golang.png",
@@ -905,6 +946,7 @@ const Certificates = () => {
         {
             id: 41,
             title: "Software Design and Development: Design Patterns & SOLID Principles",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/software-design-and-development-design-patterns-solid-principles.png",
@@ -916,6 +958,7 @@ const Certificates = () => {
         {
             id: 42,
             title: "Testing Methods",
+            category: "Programming & Software",
             issuer: "Percipio & Accenture",
             date: "2025-07-12",
             image: "images/certificates/testing-methods.png",
@@ -927,6 +970,7 @@ const Certificates = () => {
         {
             id: 43,
             title: "Web Development: What Is A Web App?",
+            category: "Web Development",
             issuer: "Percipio & Accenture",
             date: "2026-09-04",
             image: "images/certificates/web-development-what-is-a-web-app.png",
@@ -937,13 +981,28 @@ const Certificates = () => {
         }
     ];
 
+    const categories = ['All', ...new Set(certificates.map(c => c.category))];
+    const visibleCertificates = certificates
+        .filter(c => activeCategory === 'All' || c.category === activeCategory)
+        .sort((a, b) => b.date.localeCompare(a.date));
 
     return (
         <section id="certificates" className="certificates">
             <div className="container">
                 <h2 className="section-title">Certificates & Achievements</h2>
+                <div className="certificate-filters">
+                    {categories.map(c => (
+                        <button
+                            key={c}
+                            className={`filter-btn${activeCategory === c ? ' active' : ''}`}
+                            onClick={() => setActiveCategory(c)}
+                        >
+                            {c}
+                        </button>
+                    ))}
+                </div>
                 <div className="certificates-grid">
-                    {certificates.map(cert => (
+                    {visibleCertificates.map(cert => (
                         <div key={cert.id} className="certificate-card">
                             <div className="certificate-image">
                                 <img src={cert.image} alt={cert.title} />
@@ -978,6 +1037,7 @@ const Certificates = () => {
                         <img src={selectedCertificate.image} alt={selectedCertificate.title} className="modal-image" />
                         <div className="modal-body">
                             <h2>{selectedCertificate.title}</h2>
+                            <p className="modal-issuer">Category: <strong>{selectedCertificate.category}</strong></p>
                             <p className="modal-issuer">Issued by: <strong>{selectedCertificate.issuer}</strong></p>
                             <p className="modal-date">Date: <strong>{selectedCertificate.date}</strong></p>
                             <p className="modal-valid">Valid Until: <strong>{selectedCertificate.validUntil}</strong></p>
@@ -1024,11 +1084,32 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const [status, setStatus] = useState('idle');
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission here
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus('sending');
+        try {
+            const res = await fetch('https://formsubmit.co/ajax/ireneo.atenta211@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    _subject: `Portfolio inquiry from ${formData.name}`,
+                    _replyto: formData.email,
+                    _template: 'table',
+                    _captcha: 'false'
+                })
+            });
+            const data = await res.json();
+            if (!res.ok || data.success === 'false' || data.success === false) throw new Error('failed');
+            setStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+        } catch (err) {
+            setStatus('error');
+        }
     };
 
     return (
@@ -1037,8 +1118,8 @@ const Contact = () => {
                 <h2 className="section-title">Get In Touch</h2>
                 <div className="contact-content">
                     <div className="contact-info">
-                        <h3>Let's Connect</h3>
-                        <p>I'm always interested in hearing about new opportunities and projects.</p>
+                        <h3>Let's Work Together</h3>
+                        <p>I'm open to new opportunities, freelance projects, and collaborations. Send me a message and I'll reply as soon as I can.</p>
                         <div className="contact-details">
                             <div className="contact-item">
                                 <i className="fas fa-envelope"></i>
@@ -1061,7 +1142,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 name="name"
-                                placeholder="Your Name"
+                                placeholder="Your name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
@@ -1071,7 +1152,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 name="email"
-                                placeholder="Your Email"
+                                placeholder="Your email address"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
@@ -1080,14 +1161,18 @@ const Contact = () => {
                         <div className="form-group">
                             <textarea
                                 name="message"
-                                placeholder="Your Message"
+                                placeholder="Tell me about your project or opportunity"
                                 rows="5"
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
                             ></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary">Send Message</button>
+                        <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
+                            {status === 'sending' ? 'Sending...' : 'Send Message'}
+                        </button>
+                        {status === 'success' && <p className="form-status success">Thank you for reaching out! Your message has been sent, and I'll get back to you soon.</p>}
+                        {status === 'error' && <p className="form-status error">Sorry, your message couldn't be sent. Please try again or email me directly at ireneo.atenta211@gmail.com.</p>}
                     </form>
                 </div>
             </div>
